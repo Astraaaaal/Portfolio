@@ -1,0 +1,371 @@
+@import url(colors.css);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-100);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--text-100);
+    border-radius: 10px;
+    border: 2px solid var(--background-100);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-200);
+}
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--background-100);
+    color: var(--text-300);
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    box-shadow: rgba(149, 157, 165, 0.112) 0px 2px 10px;
+}
+
+.logo {
+    z-index: 11;
+    padding-left: 1rem;
+}
+
+.logo-img {
+    height: 2rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    transition: top 0.3s;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-200);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: var(--primary-300);
+}
+
+.nav-link i {
+    font-size: 0.8rem;
+}
+
+.auth-buttons,
+.mobile-auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.mobile-auth-buttons {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+}
+
+.btn {
+    border-radius: 8px;
+    border: 2px solid var(--primary-300);
+    cursor: pointer;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.8em 1.5em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.primary {
+    background-color: var(--primary-300);
+    color: white;
+
+}
+
+.primary:hover {
+    background-color: transparent;
+    color: var(--primary-300);
+}
+
+.secondary {
+    background-color: transparent;
+    color: var(--primary-300);
+}
+
+.secondary:hover {
+    background-color: var(--primary-300);
+    color: white;
+}
+
+.auth-button {
+    width: 12em;
+    height: 4em;
+
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger .line {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-200);
+    margin: 5px;
+    border-radius: 3px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    margin: 140px 100px;
+}
+
+
+
+.hero-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    animation: slideIn 1s ease-out;
+}
+
+.hero-left h1,
+.hero-left p {
+    max-width: 35vw;
+    line-height: 1.4;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.hero-left h1 {
+    font-size: 50px;
+    font-weight: 800;
+    animation-delay: 0.5s;
+}
+
+.hero-left h1 .important {
+    color: var(--primary-300);
+}
+
+.hero-left p {
+    font-size: 25px;
+    color: var(--text-200);
+    animation-delay: 1s;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: slideIn 1s ease-out forwards;
+    animation-delay: 1.5s;
+}
+
+.hero-button {
+    width: 12em;
+    height: 4em;
+    font-size: 18px;
+    border-radius: 12px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s ease;
+}
+
+.hero-right {
+    display: flex;
+    align-items: center;
+}
+
+.hero-right img {
+    width: 30vw;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    animation: bounce-in 2.5s ease-in-out forwards;
+}
+
+
+
+
+
+@media (max-width: 1100px) {
+    .hero-left h1 {
+        font-size: 40px;
+    }
+
+    .hero-left p {
+        font-size: 15px;
+    }
+
+    .hero-button {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 900px) {
+    .hero-left h1 {
+        font-size: 30px;
+    }
+
+    .hero-left p {
+        font-size: 13px;
+    }
+
+    .hero-button {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .burger {
+        display: block;
+    }
+
+    .hero {
+        margin: 120px 40px;
+    }
+
+    .hero-right img {
+        display: none;
+    }
+
+    .hero-left h1 {
+        font-size: 40px;
+        max-width: 70vw;
+    }
+
+    .hero-left p {
+        font-size: 20px;
+        max-width: 65vw;
+    }
+
+    .nav-links {
+        position: fixed;
+        justify-content: flex-start;
+        align-items: flex-start;
+        top: -100%;
+        right: 0;
+        background: white;
+        width: 100%;
+        flex-direction: column;
+        padding: 1rem 2rem;
+    }
+
+
+
+    .nav-links.active {
+        top: 70px;
+    }
+
+    .auth-buttons {
+        display: none;
+    }
+
+    .mobile-auth-buttons {
+        display: flex;
+    }
+
+    .mobile-auth-button {
+        height: 4em;
+    }
+
+    .burger.active .line:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .burger.active .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger.active .line:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+
+@media (max-width: 550px) {
+    .hero {
+        margin: 120px 20px;
+    }
+
+    .hero-left h1 {
+        font-size: 30px;
+        max-width: 85vw;
+    }
+
+    .hero-left p {
+        font-size: 20px;
+        max-width: 75vw;
+    }
+
+    .hero-button {
+        font-size: 14px;
+        border-radius: 8px;
+    }
+}
+
+@keyframes bounce-in {
+    0% {
+        transform: scale(0.0);
+    }
+
+    60% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
