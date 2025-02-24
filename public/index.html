@@ -25,44 +25,95 @@
 </head>
 
 <body>
-  <nav class="navbar">
-    <div class="logo">
-      <img src="images/icon.png" alt="Logo" class="logo-img">
-    </div>
+  <div class="parallax-container">
+    <nav class="smart-nav">
+      <ul>
+        <li data-section="presentation-section">
+          <a href="#presentation-section">À propos</a>
+          <ul class="subsections">
+            <li><a href="#Moi">Moi</a></li>
+            <li><a href="#Nous">Nous</a></li>
+          </ul>
+        </li>
 
-    <div class="nav-links">
-      <a href="#" class="nav-link"><i class="fas fa-home"></i>Accueil</a>
-      <a href="#" class="nav-link"><i class="fas fa-briefcase"></i>Réalisations</a>
-      <a href="#" class="nav-link"><i class="fas fa-shop"></i>Boutique</a>
-      <div class="mobile-auth-buttons">
-        <button class="btn primary mobile-auth-button">CONNEXION</button>
-        <button class="btn secondary mobile-auth-button">INSCRIPTION</button>
-      </div>
-    </div>
-    <div class="auth-buttons">
-      <button class="btn primary auth-button">CONNEXION</button>
-      <button class="btn secondary auth-button">INSCRIPTION</button>
-    </div>
-    <div class="burger">
-      <div class="line"></div>
-      <div class="line"></div>
-      <div class="line"></div>
-    </div>
-  </nav>
-  <div class="hero">
-    <div class="hero-left">
-      <h1>MakeUI est une boutique <span class="important">innovante</span> pour vos sites web !</h1>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting.</p>
-      <div class="hero-buttons">
-        <button class="btn primary hero-button">DECOUVRIR</button>
-        <button class="btn secondary hero-button">A PROPOS</button>
-      </div>
-    </div>
-    <div class="hero-right">
-      <img src="images/hero.png" alt="Sample Image">
-    </div>
+        <li data-section="formation-section">
+          <a href="#formation-section">Formation</a>
+          <ul class="subsections">
+            <li><a href="#licence">Licence</a></li>
+            <li><a href="#master">Master</a></li>
+            <li><a href="#cours-en-ligne">Cours en ligne</a></li>
+          </ul>
+        </li>
+
+        <li data-section="projets-section">
+          <a href="#projets-section">Projets</a>
+          <ul class="subsections">
+            <li><a href="#site-ecommerce">Site e-commerce</a></li>
+            <li><a href="#app-mobile">Application mobile</a></li>
+          </ul>
+        </li>
+
+        <li data-section="technologies-section">
+          <a href="#technologies-section">Technologies</a>
+          <ul class="subsections">
+            <li><a href="#frontend">Frontend</a></li>
+            <li><a href="#backend">Backend</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Sections principales -->
+    <section id="presentation-section" class="section">
+      <article id="presentation-content" class="subsection">
+        <h3>Présentation</h3>
+      </article>
+
+      <article id="Moi" class="subsection">
+        <h3>Moi</h3>
+      </article>
+
+      <article id="Nous" class="subsection">
+        <h3>Nous</h3>
+      </article>
+
+    </section>
+
+    <section id="formation-section" class="section">
+      <article id="licence" class="subsection">
+        <h3>Licence en Informatique</h3>
+      </article>
+
+      <article id="master" class="subsection">
+        <h3>Master en UX Design</h3>
+      </article>
+
+      <article id="cours-en-ligne" class="subsection">
+        <h3>Cours spécialisés</h3>
+      </article>
+    </section>
+
+    <section id="projets-section" class="section">
+      <article id="site-ecommerce" class="subsection">
+        <h3>Plateforme de vente en ligne</h3>
+      </article>
+
+      <article id="app-mobile" class="subsection">
+        <h3>Application de fitness</h3>
+      </article>
+    </section>
+
+    <section id="technologies-section" class="section">
+      <article id="frontend" class="subsection">
+        <h3>React & Vue.js</h3>
+      </article>
+
+      <article id="backend" class="subsection">
+        <h3>Node.js & Python</h3>
+      </article>
+    </section>
   </div>
-  <script src="js/index.js"></script>
+  <script src="js/index.js"> </script>
 </body>
 
 </html>

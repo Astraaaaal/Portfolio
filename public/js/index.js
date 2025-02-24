@@ -1,7 +1,5 @@
+/*
 // Sélection des éléments
-const burger = document.querySelector('.burger');
-const navLinks = document.querySelector('.nav-links');
-
 const h1 = document.querySelector('.hero-left h1');
 const text = "MakeUI est une boutique important pour vos sites web !";
 
@@ -15,6 +13,16 @@ h1.style.display = 'none';
 
 // Fonction Typping effect
 function textTyppingEffect(element, text, i = 0) {
+    if (i === text.length - 1) {
+        // Créer un élément span pour le mot "important" si il existe dans le texte
+        if (text.includes('important')) {
+            const index = text.indexOf('important');
+            element.innerHTML = text.substring(0, index) + `<span class="important">${text.substring(index, index + 9)}</span>` + text.substring(index + 9);
+        } else {
+            element.textContent = text;
+        }
+        return
+    }
     element.textContent += text[i];
     if (i === text.length - 1) {
         return
@@ -31,31 +39,90 @@ heroText.style.color = 'var(--text-300)';
 heroText.style.animation = 'fadeIn 1s ease-out forwards';
 heroText.style.animationDelay = '0.5s';
 
+// Ajouter la classe important pour le mot "important"
+const style = document.createElement('style');
+style.innerHTML = '.hero-text .important { color: var(--primary-300); }';
+document.head.appendChild(style);
+
 // Appel de la fonction textTyppingEffect
 textTyppingEffect(heroText, text)
+*/
+document.addEventListener('DOMContentLoaded', () => {
+    const navItems = document.querySelectorAll('.smart-nav > ul > li');
+    const sections = document.querySelectorAll('.section');
+    const progressLine = document.createElement('div');
+    progressLine.className = 'smart-nav__progress-line';
+    document.querySelector('.smart-nav ul').prepend(progressLine);
 
-// Fonction pour toggle le menu
-function toggleMenu() {
-    burger.classList.toggle('active');
-    navLinks.classList.toggle('active');
-}
+    let isScrolling = false;
 
-// Event listener pour le burger menu
-burger.addEventListener('click', toggleMenu);
+    function updateNavigation() {
+        const scrollPosition = window.scrollY + window.innerHeight / 2;
 
-// Fermer le menu quand on clique sur un lien
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        burger.classList.remove('active');
-        navLinks.classList.remove('active');
-    });
-});
+        sections.forEach((section, index) => {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
 
-// Fermer le menu quand on clique en dehors
-document.addEventListener('click', (e) => {
-    if (!burger.contains(e.target) && !navLinks.contains(e.target)) {
-        burger.classList.remove('active');
-        navLinks.classList.remove('active');
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                setActiveNavItem(index);
+            }
+        });
+
+        updateProgressLine(); // Appel séparé
+        isScrolling = false;
     }
-});
 
+    function updateProgressLine() {
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = window.scrollY;
+        const progress = (scrolled / totalHeight) * 100;
+
+        progressLine.style.height = `${Math.min(progress, 100)}%`;
+        progressLine.style.width = scrolled > 100 ? '4px' : '2px';
+    }
+
+    // CORRECTION PRINCIPALE ICI
+    function setActiveNavItem(index) {
+        navItems.forEach((item, i) => {
+            const subsections = item.querySelector('.subsections');
+            const isActive = i === index;
+
+            // Animation plus progressive
+            if (subsections) {
+                if (isActive) {
+                    subsections.style.maxHeight = '1000px'; // Valeur plus grande que la hauteur maximale attendue
+                    setTimeout(() => subsections.style.opacity = '1', 50);
+                } else {
+                    subsections.style.opacity = '0';
+                    setTimeout(() => subsections.style.maxHeight = '0', 300);
+                }
+            }
+
+            item.classList.toggle('active', isActive);
+        });
+    }
+
+
+    document.querySelector('.smart-nav').addEventListener('click', (e) => {
+        const target = e.target.closest('a');
+        if (!target) return;
+        e.preventDefault();
+
+        const section = document.querySelector(target.hash);
+        if (section) {
+            window.scrollTo({
+                top: section.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    });
+
+    window.addEventListener('scroll', () => {
+        if (!isScrolling) {
+            window.requestAnimationFrame(updateNavigation);
+            isScrolling = true;
+        }
+    });
+
+    updateNavigation();
+});
