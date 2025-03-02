@@ -119,13 +119,15 @@ body {
 
 .smart-nav>ul>li.active>a::before {
   background: var(--primary-300);
-  /* Remplissage du cercle */
   border-color: var(--text-100);
-  /* Changement couleur bordure */
-  box-shadow: 0 0 15px rgba(var(--primary-300), 0.3);
-  /* Effet de lueur */
+  box-shadow: 0 0 20px rgba(var(--primary-300), 0.5);
+  /* augmentation de la taille de l'ombre */
   transform: translateY(-50%) scale(1.2);
-  /* Légère augmentation taille */
+  /* ajout d'un effet de lumière */
+  border-radius: 50%;
+  /* pour rendre le cercle plus rond */
+  animation: pulse 2s infinite;
+  /* ajout d'une animation pour donner l'effet de lumière */
 }
 
 /* Sous-sections - Style du menu déroulant */
@@ -188,10 +190,11 @@ body {
 
 /* Liens des sous-sections */
 .smart-nav .subsections li a {
-  color: var(--text-300);
+  color: var(--text-200);
   /* Couleur texte secondaire */
   transition: all 0.3s ease;
   /* Transition lien */
+  text-decoration: none;
 }
 
 .smart-nav .subsections li a:hover {
@@ -238,7 +241,7 @@ body {
 
 .primary {
   background-color: var(--primary-300);
-  color: white;
+  color: var(--background-100);
   /* Contraste élevé */
 }
 
@@ -257,5 +260,19 @@ body {
 .secondary:hover {
   background-color: var(--primary-300);
   /* Remplissage au survol */
-  color: white;
+  color: var(--background-100);
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 20px rgba(var(--primary-300), 0.5);
+  }
+
+  50% {
+    box-shadow: 0 0 25px rgba(var(--primary-300), 0.7);
+  }
+
+  100% {
+    box-shadow: 0 0 20px rgba(var(--primary-300), 0.5);
+  }
 }
