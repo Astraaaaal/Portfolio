@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create:*)",
+      "Bash(npm install:*)",
+      "Bash(npx vite:*)",
+      "Bash(node:*)",
+      "Bash(npx -y lucide-react --help)",
+      "Bash(npm run *)",
+      "Bash(curl -s http://localhost:5173)",
+      "WebFetch(domain:genesis.lymen.fr)",
+      "Bash(curl -s -L -A \"Mozilla/5.0 \\(Windows NT 10.0; Win64; x64\\) AppleWebKit/537.36 \\(KHTML, like Gecko\\) Chrome/120.0.0.0 Safari/537.36\" \"https://genesis.lymen.fr/\")",
+      "Bash(curl -s -L -A \"Mozilla/5.0\" \"https://lymen.fr/\")",
+      "Bash(grep -v '^\\\\s*$')",
+      "Bash(curl -s -L -A \"Mozilla/5.0\" \"https://lymen.fr/about\")",
+      "Bash(curl -s http://localhost:5174)",
+      "Bash(taskkill //F //IM node.exe)",
+      "Bash(curl -s http://localhost:5173/src/hooks/useDesignTheme.jsx)",
+      "Bash(curl -s http://localhost:5173/src/App.jsx)",
+      "Bash(curl -s http://localhost:5173/src/index.css)",
+      "Bash(curl -s \"http://localhost:5173/src/main.jsx\")",
+      "Bash(grep -r \"t\\(\\\\`\" /c/Users/user/Documents/GitHub/Portfolio/src --include=\"*.jsx\" --include=\"*.js\")",
+      "Bash(grep -E \"\\\\.\\(zip|pdf\\)$|\\\\.idea|project-bolt|portofio\")",
+      "Bash(git ls-files *)",
+      "Bash(cat)",
+      "Read(//tmp/**)",
+      "Bash(bash /tmp/check_imports.sh)",
+      "WebSearch"
+    ]
+  }
+}

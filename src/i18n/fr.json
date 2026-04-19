@@ -1,0 +1,96 @@
+{
+  "nav": {
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Je suis",
+    "name": "Swann Patissier",
+    "role": "Développeur Full Stack & Designer",
+    "description": "Étudiant en BUT Informatique & fondateur de Lymen. Je crée des expériences numériques modernes, du design à la mise en production, et bien plus encore.",
+    "cta_projects": "Voir mes projets",
+    "cta_contact": "Me contacter"
+  },
+  "about": {
+    "title": "À propos",
+    "subtitle": "Mon parcours",
+    "text_1": "Passionné par le développement web et le design d'interfaces depuis le lycée, j'ai transformé cette passion en parcours professionnel. De mes premières créations à la fondation de Lymen, chaque étape m'a rapproché de mon objectif.",
+    "text_2": "Aujourd'hui en 2ème année de BUT Informatique, je combine formation académique et expérience entrepreneuriale pour concevoir des solutions digitales complètes.",
+    "card_bac": "Baccalauréat Scientifique",
+    "card_bac_desc": "Formation scientifique solide, bases en mathématiques et en physique.",
+    "card_studies": "Études Supérieures & Premier Projet",
+    "card_studies_desc": "Premier projet entrepreneurial : marque de vêtements et premières conceptions de sites web et design.",
+    "card_but": "BUT Informatique — 2ème année",
+    "card_but_desc": "Développement, réseaux, bases de données et gestion de projets informatiques.",
+    "card_lymen": "Création de Lymen",
+    "card_lymen_desc": "Entreprise tech et ses filiales : Genesis (développement web) et Aegis (cybersécurité automatisée)."
+  },
+  "projects": {
+    "title": "Projets",
+    "subtitle": "Mes réalisations",
+    "view": "Voir le projet",
+    "details": "Détails",
+    "view_all": "Voir tous les projets"
+  },
+  "all_projects": {
+    "title": "Tous les projets",
+    "subtitle": "Découvrez l'ensemble de mes réalisations",
+    "back": "Retour"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Travaillons ensemble",
+    "text": "Vous avez un projet en tête ? Une opportunité à proposer ? N'hésitez pas à me contacter.",
+    "copy": "Copier",
+    "copied": "Copié !",
+    "cv": "Télécharger mon CV"
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "made_with": "Fait avec"
+  },
+  "project_detail": {
+    "back": "Retour aux projets",
+    "overview": "Aperçu",
+    "features": "Fonctionnalités",
+    "stack": "Technologies",
+    "links": "Liens"
+  },
+  "themes": {
+    "title": "Thèmes",
+    "subtitle": "Un site, plusieurs identités",
+    "active": "Actif",
+    "coming_soon": "Bientôt",
+    "available": "Dispo",
+    "flat_design": "Flat Design",
+    "flat_design_desc": "Design épuré aux gradients colorés",
+    "glassmorphism": "Glassmorphism",
+    "glassmorphism_desc": "Transparences et effets de verre",
+    "neobrutalism": "Néobrutalism",
+    "neobrutalism_desc": "Audacieux et brut",
+    "retro_synthwave": "Rétro Synthwave",
+    "retro_synthwave_desc": "Néons et ambiance années 80",
+    "minimalisme": "Minimalisme",
+    "minimalisme_desc": "L'essentiel, rien de plus",
+    "constructivism": "Constructivisme",
+    "constructivism_desc": "Formes géométriques et contrastes forts",
+    "editorial": "Style Éditorial",
+    "editorial_desc": "Typographie soignée, mise en page magazine",
+    "hand_drawn": "Hand-Drawn",
+    "hand_drawn_desc": "Illustrations et traits dessinés à la main",
+    "retro": "Rétro",
+    "retro_desc": "Couleurs chaudes et nostalgie vintage",
+    "y2k": "Y2K",
+    "y2k_desc": "Esthétique futuriste des années 2000",
+    "parallax": "Parallax Scrolling",
+    "parallax_desc": "Profondeur et mouvements au scroll",
+    "dialup": "Dial-up Delight",
+    "dialup_desc": "Nostalgie du web des années 90",
+    "resonant_stark": "Resonant Stark",
+    "resonant_stark_desc": "Ultra minimal et contrasté",
+    "skeuomorphisme": "Skeuomorphisme",
+    "skeuomorphisme_desc": "Textures réalistes et profondeur subtile"
+  }
+}

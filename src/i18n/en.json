@@ -1,0 +1,96 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "I'm",
+    "name": "Swann Patissier",
+    "role": "Full Stack Developer & Designer",
+    "description": "Computer Science student & founder of Lymen. I craft modern digital experiences, from design to production, and much more.",
+    "cta_projects": "View my projects",
+    "cta_contact": "Contact me"
+  },
+  "about": {
+    "title": "About",
+    "subtitle": "My journey",
+    "text_1": "Passionate about web development and interface design since high school, I turned this passion into a professional journey. From my first creations to founding Lymen, every step brought me closer to my goal.",
+    "text_2": "Currently in my 2nd year of Computer Science, I combine academic training with entrepreneurial experience to deliver complete digital solutions.",
+    "card_bac": "Scientific Baccalaureate",
+    "card_bac_desc": "Strong scientific education, foundations in mathematics and physics.",
+    "card_studies": "Higher Studies & First Project",
+    "card_studies_desc": "First entrepreneurial project: clothing brand creation and first web design work.",
+    "card_but": "Computer Science — 2nd Year",
+    "card_but_desc": "Development, networks, databases and IT project management.",
+    "card_lymen": "Lymen Founded",
+    "card_lymen_desc": "Tech company and its subsidiaries: Genesis (web development) and Aegis (automated cybersecurity)."
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "My work",
+    "view": "View project",
+    "details": "Details",
+    "view_all": "View all projects"
+  },
+  "all_projects": {
+    "title": "All projects",
+    "subtitle": "Discover all of my work",
+    "back": "Back"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Let's work together",
+    "text": "Have a project in mind? An opportunity to share? Don't hesitate to reach out.",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "cv": "Download my CV"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "made_with": "Made with"
+  },
+  "project_detail": {
+    "back": "Back to projects",
+    "overview": "Overview",
+    "features": "Features",
+    "stack": "Technologies",
+    "links": "Links"
+  },
+  "themes": {
+    "title": "Themes",
+    "subtitle": "One site, multiple identities",
+    "active": "Active",
+    "coming_soon": "Soon",
+    "available": "Available",
+    "flat_design": "Flat Design",
+    "flat_design_desc": "Clean design with colorful gradients",
+    "glassmorphism": "Glassmorphism",
+    "glassmorphism_desc": "Glass effects and transparency",
+    "neobrutalism": "Neobrutalism",
+    "neobrutalism_desc": "Bold and raw",
+    "retro_synthwave": "Retro Synthwave",
+    "retro_synthwave_desc": "Neon lights and 80s vibes",
+    "minimalisme": "Minimalism",
+    "minimalisme_desc": "The essentials, nothing more",
+    "constructivism": "Constructivism",
+    "constructivism_desc": "Geometric shapes and strong contrasts",
+    "editorial": "Editorial Style",
+    "editorial_desc": "Refined typography, magazine layouts",
+    "hand_drawn": "Hand-Drawn",
+    "hand_drawn_desc": "Illustrations and hand-crafted strokes",
+    "retro": "Retro",
+    "retro_desc": "Warm colors and vintage nostalgia",
+    "y2k": "Y2K",
+    "y2k_desc": "Futuristic 2000s aesthetic",
+    "parallax": "Parallax Scrolling",
+    "parallax_desc": "Depth and motion on scroll",
+    "dialup": "Dial-up Delight",
+    "dialup_desc": "90s web nostalgia",
+    "resonant_stark": "Resonant Stark",
+    "resonant_stark_desc": "Ultra minimal and contrasted",
+    "skeuomorphisme": "Skeuomorphism",
+    "skeuomorphisme_desc": "Realistic textures and subtle depth"
+  }
+}
