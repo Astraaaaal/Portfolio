@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { GraduationCap, Palette, Code2, Rocket } from 'lucide-react';
+import { useDesignTheme } from '../hooks/useDesignTheme';
+import { getThemeConfig } from '../data/themeConfig';
+import { TriangleDot, DoodleDot } from '../components/ThemeDecorations';
 import SectionTitle from '../components/SectionTitle';
 
 const steps = [
@@ -10,17 +13,45 @@ const steps = [
   { key: 'lymen', icon: Rocket, color: '#10b981', num: '04', side: 'right' },
 ];
 
+function TimelineDot({ color, dotElement }) {
+  switch (dotElement) {
+    case 'square':
+      return (
+        <div
+          className="w-[18px] h-[18px] relative"
+          style={{ background: color, border: '3px solid #000', borderRadius: 2, boxShadow: `2px 2px 0 #000` }}
+        />
+      );
+    case 'triangle':
+      return <TriangleDot color={color} />;
+    case 'doodle':
+      return <DoodleDot color={color} />;
+    case 'circle':
+    default:
+      return (
+        <div
+          className="w-4 h-4 rounded-full relative"
+          style={{ background: color, boxShadow: `0 0 12px ${color}40` }}
+        />
+      );
+  }
+}
+
 export default function About() {
   const { t } = useTranslation();
+  const [theme] = useDesignTheme();
+  const cfg = getThemeConfig(theme);
 
   return (
     <section id="about" className="relative py-24 sm:py-32 overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary-500/8 to-transparent dark:from-primary-500/15" />
-        <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-accent-pink/8 rounded-full blur-3xl" />
-        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-accent-cyan/6 rounded-full blur-3xl" />
-      </div>
+      {/* Background — only for themes with blobs */}
+      {cfg.showBlobs && (
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary-500/8 to-transparent dark:from-primary-500/15" />
+          <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-accent-pink/8 rounded-full blur-3xl" />
+          <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-accent-cyan/6 rounded-full blur-3xl" />
+        </div>
+      )}
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <SectionTitle title={t('about.title')} subtitle={t('about.subtitle')} />
@@ -41,7 +72,7 @@ export default function About() {
         </motion.div>
 
         {/* Timeline */}
-        <div className="relative" style={{ perspective: 1000 }}>
+        <div className="relative" style={cfg.aboutPerspective ? { perspective: 1000 } : undefined}>
           {/* Timeline vertical line */}
           <motion.div
             initial={{ scaleY: 0 }}
@@ -58,7 +89,7 @@ export default function About() {
           <div className="flex flex-col gap-8">
             {steps.map(({ key, icon: Icon, color, num, side }, i) => (
               <div key={key} className="relative grid md:grid-cols-2 gap-4 md:gap-12 py-2">
-                {/* Timeline dot with pulsing halo */}
+                {/* Timeline dot */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0 }}
                   whileInView={{ opacity: 1, scale: 1 }}
@@ -67,33 +98,33 @@ export default function About() {
                   className="absolute left-[23px] md:left-1/2 top-9 z-10 -translate-x-1/2"
                 >
                   <div className="relative flex items-center justify-center">
-                    <div
-                      className="absolute w-10 h-10 rounded-full animate-halo"
-                      style={{ background: `radial-gradient(circle, ${color}50, transparent 70%)` }}
-                    />
-                    <div
-                      className="w-4 h-4 rounded-full relative"
-                      style={{ background: color, boxShadow: `0 0 12px ${color}40` }}
-                    />
+                    {/* Halo — only for themes that use it */}
+                    {cfg.aboutHalo && (
+                      <div
+                        className="absolute w-10 h-10 rounded-full animate-halo"
+                        style={{ background: `radial-gradient(circle, ${color}50, transparent 70%)` }}
+                      />
+                    )}
+                    <TimelineDot color={color} dotElement={cfg.aboutDots} />
                   </div>
                 </motion.div>
 
-                {/* Card wrapper with perspective */}
+                {/* Card wrapper */}
                 <div
                   className={`group relative ml-14 md:ml-0 ${
                     side === 'left'
                       ? 'md:col-start-1 md:pr-10'
                       : 'md:col-start-2 md:pl-10'
                   }`}
-                  style={{ perspective: 800, '--step-color': color }}
+                  style={{ perspective: cfg.aboutPerspective ? 800 : undefined, '--step-color': color }}
                 >
                   <motion.div
-                    initial={{
+                    initial={cfg.aboutPerspective ? {
                       opacity: 0,
                       x: side === 'left' ? -80 : 80,
                       rotateY: side === 'left' ? -12 : 12,
-                    }}
-                    whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+                    } : { opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, x: 0, y: 0, rotateY: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: i * 0.2 }}
                   >
